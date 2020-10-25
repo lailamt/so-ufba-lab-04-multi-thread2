@@ -8,12 +8,19 @@
 #include <unistd.h>
 
 
-#define NUM_TYPE_X 1
+/* #define NUM_TYPE_X 1
 #define NUM_TYPE_Y 1
 #define NUM_TYPE_Z 1
 
 #define B1_SIZE 5
-#define B2_SIZE 5
+#define B2_SIZE 5 */
+
+int NUM_TYPE_X = 1;
+int NUM_TYPE_Y = 1;
+int NUM_TYPE_Z = 1;
+
+int B1_SIZE = 5;
+int B2_SIZE = 5;
 
 
 pthread_mutex_t b_mutex;	
@@ -102,6 +109,22 @@ void * entityZBody(void *id) {
 
 
 int main(int argc, char const *argv[]) {
+
+    printf("Digite o número de threads X:\n");
+    scanf("%d", &NUM_TYPE_X);
+
+    printf("Digite o número de threads Y:\n");
+    scanf("%d", &NUM_TYPE_Y);
+
+    printf("Digite o número de threads Z:\n");
+    scanf("%d", &NUM_TYPE_Z);
+
+    printf("Digite o tamanho de B1:\n");
+    scanf("%d", &B1_SIZE);
+
+    printf("Digite o tamanho de B2:\n");
+    scanf("%d", &B2_SIZE);
+
     pthread_t entity_type_x[NUM_TYPE_X];
     pthread_t entity_type_y[NUM_TYPE_Y];
     pthread_t entity_type_z[NUM_TYPE_Z];

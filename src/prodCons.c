@@ -63,8 +63,8 @@ int main(int argc, char*argv[]){
         pthread_join(threadZ[i], NULL);
     }
     
-    //printf("x: %d; y: %d; z: %d\n", X, Y, Z);
-    printf("n1: %d; n2: %d\n", N1, N2);
+    // printf("x: %d; y: %d; z: %d\n", X, Y, Z);
+    // printf("n1: %d; n2: %d\n", N1, N2);
 }
 
 /*
@@ -75,14 +75,14 @@ void tempo(int n){
 */
 
 void *X(){
-    printf("New thread X created!\nthread_x = %d\n", count_threads_x);
+    // printf("New thread X created!\nthread_x = %d\n", count_threads_x);
     int id = count_threads_x;
     count_threads_x++;
 
     while(1){
         sem_wait(&buffer1_empty);
         sem_wait(&buffer1_mutex);
-        printf("thread X%d\n", id);
+        // printf("thread X%d\n", id);
         buffer1_count++;
         printf("item foi inserido no buffer B1\nbuffer1_count: %d\n", buffer1_count);
         sem_post(&buffer1_mutex);
@@ -92,14 +92,14 @@ void *X(){
 }
 
 void *Y(){
-    printf("New thread Y created!\nthread_y = %d\n", count_threads_y);
+    // printf("New thread Y created!\nthread_y = %d\n", count_threads_y);
     int id = count_threads_y;
     count_threads_y++;
 
     while(1){
         sem_wait(&buffer1_full);
         sem_wait(&buffer1_mutex);
-        printf("thread Y%d\n", id);
+        // printf("thread Y%d\n", id);
         buffer1_count--;
         printf("item retirado do buffer B1\nbuffer1 count: %d\n", buffer1_count);
         sem_post(&buffer1_mutex);
@@ -116,14 +116,14 @@ void *Y(){
 }
 
 void *Z(){
-    printf("New thread Z created!\nthread_z = %d\n", count_threads_z);
+    // printf("New thread Z created!\nthread_z = %d\n", count_threads_z);
     int id = count_threads_z;
     count_threads_z++;
 
     while(1){
         sem_wait(&buffer2_full);
         sem_wait(&buffer2_mutex);
-        printf("thread Z%d\n", id);
+        // printf("thread Z%d\n", id);
         buffer2_count--;
         printf("item retirado do buffer B2\nbuffer2_count: %d\n", buffer2_count);
         sem_post(&buffer2_mutex);

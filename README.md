@@ -1,2 +1,18 @@
-# so-ufba-lab-04-multi-thread2
-Repositório da atividade prática 4 da disciplinas de Sistemas Operacionais da Universidade Federal da Bahia durante o Semestre Letivo Suplementar (SLS) 2020.
+# PROGRAMAÇÃO MULTITHREAD
+
+Esse projeto faz parte da Atividade Prática 03
+
+
+Clone o projeto, e no diretório raiz, execute em uma linha de comando:
+
+```
+make estatistica
+
+make primos
+
+make pi
+
+make multmatriz
+```
+
+Os arquivos gerados estão na pasta build/ e podem ser executados através do comando ./nomeDoPrograma

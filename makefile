@@ -13,24 +13,25 @@ monitorDorminhoco: src/monitorDorminhoco.c
 prodConBuf: src/prodConBuf.c
 	mkdir -p build
 	$(CC) src/prodConBuf.c -o build/prodConBuf $(CFLAGS)
+
 procon: src/prodCons.c
 	mkdir -p build
-	$(CC) $(CFLAGS) src/prodCons.c -o build/procon
+	$(CC) $(CFLAGS) src/prodCons.c -o build/procon $(CFLAGS)
 	$(clean)
 
-planta: sarc/plantacao.c 
+planta: src/plantacao.c 
 	mkdir -p build
-	$(CC) $(CFLAGS) src/plantacao.c  -o build/planta
+	$(CC) $(CFLAGS) src/plantacao.c  -o build/planta $(CFLAGS)
 	$(clean)
 
 dorminhoco: src/monitorDorminhoco.c 
 	mkdir -p build
-	$(CC) $(CFLAGS) src/monitorDorminhoco.c -o build/monitorDorminhoco
+	$(CC) $(CFLAGS) src/monitorDorminhoco.c -o build/monitorDorminhoco $(CFLAGS)
 	$(clean)
 
 barbearia: src/barbearia.c 
 	mkdir -p build
-	$(CC) $(CFLAGS) src/barbearia.c -o build/barbearia.c
+	$(CC) $(CFLAGS) src/barbearia.c -o build/barbearia.c $(CFLAGS)
 	$(clean)
 
 plantacao2: src/plantacao2.c 

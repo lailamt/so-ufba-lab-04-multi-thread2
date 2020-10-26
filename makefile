@@ -33,5 +33,10 @@ barbearia: src/barbearia.c
 	$(CC) $(CFLAGS) src/barbearia.c -o build/barbearia.c
 	$(clean)
 
+plantacao2: src/plantacao2.c 
+	mkdir -p build
+	$(CC) src/plantacao2.c  -o build/plantacao2 $(CFLAGS)
+	$(clean)
+
 clean:
 	rm -f src/*.o

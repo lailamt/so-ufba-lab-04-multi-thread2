@@ -5,15 +5,6 @@ define clean
     rm -f src/*.o
 endef
 
-monitorDorminhoco: src/monitorDorminhoco.c
-	mkdir -p build
-	$(CC) src/monitorDorminhoco.c -o build/monitorDorminhoco $(CFLAGS)
-	$(clean)
-
-prodConBuf: src/prodConBuf.c
-	mkdir -p build
-	$(CC) src/prodConBuf.c -o build/prodConBuf $(CFLAGS)
-
 procon: src/prodCons.c
 	mkdir -p build
 	$(CC) $(CFLAGS) src/prodCons.c -o build/procon $(CFLAGS)
@@ -29,15 +20,19 @@ dorminhoco: src/monitorDorminhoco.c
 	$(CC) $(CFLAGS) src/monitorDorminhoco.c -o build/monitorDorminhoco $(CFLAGS)
 	$(clean)
 
-barbearia: src/barbearia.c 
+barbearia: src/Barbearia/barbearia.c 
 	mkdir -p build
-	$(CC) $(CFLAGS) src/barbearia.c -o build/barbearia.c $(CFLAGS)
+	$(CC) $(CFLAGS) src/Barbearia/barbearia.c -o build/barbearia $(CFLAGS)
 	$(clean)
 
-plantacao2: src/plantacao2.c 
+plantacao2: src/Outros/plantacao2.c 
 	mkdir -p build
-	$(CC) src/plantacao2.c  -o build/plantacao2 $(CFLAGS)
+	$(CC) src/Outros/plantacao2.c  -o build/plantacao2 $(CFLAGS)
 	$(clean)
+
+prodConBuf: src/Outros/prodConBuf.c
+	mkdir -p build
+	$(CC) src/Outros/prodConBuf.c -o build/prodConBuf $(CFLAGS)
 
 clean:
 	rm -f src/*.o
